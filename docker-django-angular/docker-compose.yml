@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  # db:
+  #   image: postgres
+  #   ports:
+  #     - "54321:5432"
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile-django
+  #   command: python manage.py runserver 0.0.0.0:8000
+  #   volumes:
+  #     - .:/code
+  #   ports:
+  #     - "8088:8000"
+  #   depends_on:
+  #     - db
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-angular
+    ports:
+      - "3000:80"
