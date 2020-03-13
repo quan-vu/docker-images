@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  crontab:
+    build: .
+    volumes:
+      - ./cronpy:/cronpy
+    working_dir: /cronpy
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    command:
+      - /cronpy/start.sh
+    restart: always
+    
